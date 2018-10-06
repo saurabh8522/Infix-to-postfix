@@ -28,7 +28,7 @@ int prec(char c)
 
 int main()
 {
-	//hola amagios
+	
 	cout << "Enter the string to be converted:"
 		cin >> s;
 	stack<char> final;
