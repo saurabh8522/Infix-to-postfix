@@ -22,19 +22,12 @@ int prec(char c)
 {
 	switch (c)
 	{
-	case '-':
-	case '+': return 1;
-	case '/':
-	case '*': return 2;
-	case '^':return 3;
+
 	}
 }
 
 int main()
 {
-	ios::sync_with_stdio(false);
-	cin.tie(NULL);
-	string s;
 	
 	cout << "Enter the string to be converted:"
 		cin >> s;
