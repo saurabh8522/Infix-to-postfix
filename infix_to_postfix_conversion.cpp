@@ -86,5 +86,7 @@ int main()
 		cout << s;
 	//sayonara
 	//prateek
+	//all done in 3 seconds
+
 
 }
