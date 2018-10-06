@@ -7,12 +7,12 @@ typedef long long ll;
 typedef long double ld;
 #define pb push_back
 #define mod 1000000007
-#define debug(a,b,c) cout<<a<<"->"<<b<<"->"<<c<<endl
+#define debug(a,b,c) cout<<a<<"->"<<b<<"->"<<c<<endl; 
 ll fastexpo(ll x,ll y,ll m){ll temp=1;while(y>0){if(y&1)temp = ((temp%m)*(x%m))%m;x = ((x%m)*(x%m))%m;}return temp;}
 
 int isoperand(char c)
 {
-	if((c>='a'&&c<='z')||(c>='A'&&c>='Z'))
+	if((c>='a'&&c<='z')||(c>='A'&&c<='Z'))
 	return 1;
 	else return 0;
 }
@@ -30,6 +30,8 @@ int prec(char c)
 
 int main()
 {
+	 	ios::sync_with_stdio(false);
+	 	cin.tie(NULL);
 	 	string s;
 	 //char x='*';
 	 //cout<<isoperand(x);
@@ -40,14 +42,14 @@ int main()
 	 
 	 	for(int i=0; i<s.size(); i++)
 	 	{
-	 		if(isoperand(s[k]))
+	 		if(isoperand(s[i]))
 	 		{
 	 			cout<<"in one	";
 	 			debug(k,s,i);
-			 	s[++i]=s[i];
+			 	s[++k]=s[i];
 				debug(k,s,i);
 	 		}
-	 		else (s[i]=='(')
+	 		else if(s[i]=='(')
 	 			final.push(s[i]);
 	 			
 	 		else if(s[i]==')')
@@ -56,7 +58,7 @@ int main()
 	 			{
 	 				cout<<"in two	";
 	 				debug(k,s,i);
-					s[++k]=final.pop();
+					s[++k]=final.top();
 					final.pop();
 					debug(k,s,i);
 				}
@@ -66,6 +68,9 @@ int main()
 	 		{
 	 			while(final.empty()==0 && prec(s[i]) >= prec(final.top()))
 				{
+					cout<<"in three	";
+					debug(k,s,i);
+					s[++k]=final.top();
 					final.pop();
 					debug(k,s,i);
 				}
@@ -75,7 +80,7 @@ int main()
 	    {
 	    	debug(k,s,"final");
 			s[++k]=final.top();
-			final.top();
+			final.pop();
 			debug(k,s,"final");
 		}
 		s[++k]='\n';
