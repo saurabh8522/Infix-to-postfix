@@ -63,13 +63,12 @@ int main()
 					debug(k,s,i);
 				}
 	 				final.pop();
-	 		}
+	 		}//this is for comparing preferences of operators
 	 		else
 	 		{
 	 			while(final.empty()==0 && prec(s[i]) >= prec(final.top()))
 				{
-					cout<<"in three	";
-					debug(k,s,i);
+					
 					s[++k]=final.top();
 					final.pop();
 					debug(k,s,i);
