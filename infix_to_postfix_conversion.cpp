@@ -35,23 +35,26 @@ int main()
 	 	string s;
 	 //char x='*';
 	 //cout<<isoperand(x);
-	 	
+	 	cout<<"enter the string to be converted:"
 	 	cin>>s;
 	 	stack<char> final;
 	 	int k=-1;
 	 
 	 	for(int i=0; i<s.size(); i++)
 	 	{
+	 	//if scanned character is operand
 	 		if(isoperand(s[i]))
 	 		{
 	 			cout<<"in one	";
 	 			debug(k,s,i);
 			 	s[++k]=s[i];
 				debug(k,s,i);
-	 		}
+
+	 		}//else if it is '('
 	 		else if(s[i]=='(')
 	 			final.push(s[i]);
-	 			
+
+	 			//else if it is ')'
 	 		else if(s[i]==')')
 	 		{
 				while(final.empty()==0&&final.top()!='(')
@@ -64,6 +67,7 @@ int main()
 				}
 	 				final.pop();
 	 		}
+	 		//else if scanned character is operator
 	 		else
 	 		{
 	 			while(final.empty()==0 && prec(s[i]) >= prec(final.top()))
@@ -84,6 +88,7 @@ int main()
 			debug(k,s,"final");
 		}
 		s[++k]='\n';
+		cout<<"the final string is :"
 		cout<<s;
 	
 }
