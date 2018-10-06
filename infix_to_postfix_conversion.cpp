@@ -75,7 +75,7 @@ int main()
 					debug(k,s,i);
 				}
 			}		
-		}
+		}//this is to check for last elements
 		while(final.empty()==0)
 	    {
 	    	debug(k,s,"final");
