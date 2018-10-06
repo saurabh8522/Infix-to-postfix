@@ -17,6 +17,7 @@ int isoperand(char c)
 	else return 0;
 }
 
+//for comaparing prefrence of operators
 int prec(char c)
 {
 	switch(c)
@@ -35,7 +36,7 @@ int main()
 	 	string s;
 	 //char x='*';
 	 //cout<<isoperand(x);
-	 	cout<<"enter the string to be converted:"
+	 	cout<<"Enter the string to be converted:"
 	 	cin>>s;
 	 	stack<char> final;
 	 	int k=-1;
@@ -88,7 +89,7 @@ int main()
 			debug(k,s,"final");
 		}
 		s[++k]='\n';
-		cout<<"the final string is :"
+		cout<<"the Final String is :"
 		cout<<s;
 	
 }
